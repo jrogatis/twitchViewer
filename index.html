@@ -2,9 +2,73 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
 
-<body>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+
+<script src="angular-1.5.5/angular.min.js"></script>
+<script src="angular-1.5.5/angular-route.min.js"></script>
+<script src="angular-1.5.5/angular-animate.min.js"></script>
+<script src="TwTvviewerApp.js"></script>
+<title>TwitchTV Viwer</title>
+</head>
+ <body ng-app="appTwTv" ng-controller="MainCtrl">
+<!--<div class="container" ng-controller="MainCtrl">-->
+<div class="container" >
+  <div class="main" ng-view>
+  <section class="channelspage">
+  <div class="search">
+    <h1>Twitch <img id="wikiLogo" src= "http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_WhiteonPurple.png" alt="Twitch TV Logo"> TV</h1>
+    <label>search: </label>
+    <input id="query_text" type ="text" ng-model="queryText" my-enter="teste()" placeholder="Search for Channels" autofocus>  
+ <!--  <label class="formgroup">by:
+      <select ng-model="channelsOrder">
+        <option value="title">All</option>
+        <option value="title">On Line</option>
+        <option value="timestamp">Off Line</option>
+      </select>
+    </label>-->
+   <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" checked>
+      on-Line
+     </label>
+    <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
+      off-Line
+    </label>
+       <label class="formgroup">
+      <input type="radio" ng-model="direction" name="direction" value="reverse">
+      all
+    </label>
+   
+  </div>
+  <!-- aqui e a lista de canais usar o ng-show-->
+  <div class="channelslist" ng-show="hasChannels">
+      <ul >
+        
+       
+         <h1>channels</h1>
+         <li ng-animate="'animate'" class="article cf" ng-repeat="item in channels">     
+           <a ng-href="{{item.url}}" target="_blank"> 
+            <div class="info">           
+              <h2>{{item.display_name}}</h2>
+               <h2>{{item.name}}</h2>
+              <h3>{{item.game}}</h3>
+              <img id="img_Logo" ng-src="{{item.logo}}" alt="logo">
+              <div ng-show="item.status">
+              <p>{{item.status}}</p>
+              </div>
+            
+            </div>
+             </a>        
+        </li>
+     
+      </ul>  
+  </div>
+</section>
+  
+  </div>
+ </div>
 </body>
+ 
 </html>
