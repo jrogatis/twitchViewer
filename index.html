@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<!-- OU YEAAHHH ONLY USING ANGULAR-->
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="UTF-8">
 
@@ -51,14 +51,14 @@
          <li ng-animate="'animate'" class="article cf" ng-repeat="item in channels">     
            <a ng-href="{{item.url}}" target="_blank"> 
             <div class="info">           
-              <h2>{{item.display_name}}</h2>
-               <h2>{{item.name}}</h2>
+              <h2 >{{item.display_name}}</h2>
               <h3>{{item.game}}</h3>
-              <img id="img_Logo" ng-src="{{item.logo}}" alt="logo">
-              <div ng-show="item.status">
-              <p>{{item.status}}</p>
-              </div>
-            
+              <div layout="row">
+                  <img flex="60" id="img_Logo" ng-src="{{item.logo}}" alt="logo">         
+                  <div flex="20" ng-show = "item.onLine">
+              			<p>{{item.status}}</p>
+              	  </div>
+            </div> 
             </div>
              </a>        
         </li>

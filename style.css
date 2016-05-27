@@ -50,7 +50,7 @@ q, blockquote {
 a img {
   border: none; }
 
-channel, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+channels, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
 * {
@@ -73,7 +73,6 @@ channel, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html {
 	background-color: #023E54;
-	background-image: url(images/fallback-gradient.png);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#023E54), to(#10AAC0));
 	background-image: -webkit-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
 	background-image: -moz-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
@@ -274,56 +273,6 @@ a.small {
   transform: scale(1.2);
 }
 
-.channel info {
-  display: block;
-  float: left;
-  padding-left: 120px !important;
-}
-
-.channel:last-child {
-  border-bottom:none;
-}
-
-.channelinfo {
-  font-size: 1.1em;
-  line-height: 160%;
-  background: #EEE8D5;
-  color: #0F4150;
-  width: 90%;
-  min-width: 320px;
-  max-width: 620px;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px 30px;
-  border-radius: 10px;
-  z-index: 20;
-}
-
-.channelinfo h1{
-  font-size: 1.8em;
-  margin-bottom: 0;
-}
-
-.channelinfo img {
-  width: 40%;
-  max-width: 130px;
-  border-radius: 20px;
-}
-
-.channel.ng-enter.ng-enter-active,
-.channel.ng-leave {
-  opacity: 1;
-  height: 80px;
-  overflow: hidden;
-}
-
-.channel.ng-leave.ng-leave-active,
-.channel.ng-enter {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
 #random_page {
 	margin-top: 10px;
 	margin-bottom: 10px;
