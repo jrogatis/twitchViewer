@@ -72,14 +72,14 @@ channels, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
 }
 
 html {
-	background-color: #023E54;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#023E54), to(#10AAC0));
-	background-image: -webkit-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
-	background-image: -moz-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
-	background-image: -o-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
-	min-height: 100%;
-	height: auto;
-	background-image: linear-gradient(180deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%);
+	background-color: #023E54 !important;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#023E54), to(#10AAC0))!important;
+	background-image: -webkit-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%)!important;
+	background-image: -moz-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%)!important;
+	background-image: -o-linear-gradient(270deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%)!important;
+	min-height: 100%!important;
+	height: auto!important;
+	background-image: linear-gradient(180deg,rgba(185,179,228,1.00) 0%,rgba(88,76,175,1.00) 100%)!important;
 }
 
 body  {
@@ -211,8 +211,7 @@ a.small {
 }
 
 .search label.formgroup {
-  display: inline;
-  width: auto;
+	display: inline;
 }
 
 .search select {
@@ -292,4 +291,29 @@ a.small {
 	max-width: 120px;
 	max-height: 120px;
 	border-radius: 30px;
+	display: inline-block;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+#header_channels {
+	text-align: center;
+	padding-bottom: 6%;
+	font-size: 320%;
+	border-bottom-width: medium;
+	border-bottom-style: solid;
+}
+#details_channel {
+	display: block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#item_status {
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 70%;
+	text-align: justify;
 }

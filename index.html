@@ -4,11 +4,15 @@
 <meta charset="UTF-8">
 <!-- OU YEAAHHH ONLY USING ANGULAR-->
 <link rel="stylesheet" type="text/css" href="style.css">
+
 <meta charset="UTF-8">
 
 <script src="angular-1.5.5/angular.min.js"></script>
 <script src="angular-1.5.5/angular-route.min.js"></script>
 <script src="angular-1.5.5/angular-animate.min.js"></script>
+
+
+
 <script src="TwTvviewerApp.js"></script>
 <title>TwitchTV Viwer</title>
 </head>
@@ -21,43 +25,40 @@
     <h1>Twitch <img id="wikiLogo" src= "http://s.jtvnw.net/jtv_user_pictures/hosted_images/GlitchIcon_WhiteonPurple.png" alt="Twitch TV Logo"> TV</h1>
     <label>search: </label>
     <input id="query_text" type ="text" ng-model="queryText" my-enter="teste()" placeholder="Search for Channels" autofocus>  
- <!--  <label class="formgroup">by:
+  <!--label class="formgroup">On-Line:
       <select ng-model="channelsOrder">
-        <option value="title">All</option>
-        <option value="title">On Line</option>
-        <option value="timestamp">Off Line</option>
+        <option value="All" selected >All</option>
+        <option value="true">On Line</option>
+        <option value="false">Off Line</option>
       </select>
-    </label>-->
-   <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" checked>
-      on-Line
-     </label>
-    <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse">
-      off-Line
-    </label>
+    </label-->
+    <div>
        <label class="formgroup">
-      <input type="radio" ng-model="direction" name="direction" value="reverse">
-      all
-    </label>
-   
+          <input type="radio" ng-model="filter" name="on" value="true">
+          on-Line
+         </label>
+        <label class="formgroup">
+          <input type="radio" ng-model="filter" name="on" value="false">
+          off-Line
+        </label>
+           <label class="formgroup">
+          <input type="radio" ng-model="filter" name="on" value="" >
+          all
+        </label>
+   </div>
   </div>
   <!-- aqui e a lista de canais usar o ng-show-->
   <div class="channelslist" ng-show="hasChannels">
       <ul >
-        
-       
-         <h1>channels</h1>
-         <li ng-animate="'animate'" class="article cf" ng-repeat="item in channels">     
+        <h1 id="header_channels">channels</h1>
+         <li ng-animate="'animate'" class="article cf" ng-repeat="item in channels | filter: {onLine: filter}">     
            <a ng-href="{{item.url}}" target="_blank"> 
             <div class="info">           
-              <h2 >{{item.display_name}}</h2>
+              <h2 id="display_name" >{{item.display_name}}</h2>
               <h3>{{item.game}}</h3>
-              <div layout="row">
-                  <img flex="60" id="img_Logo" ng-src="{{item.logo}}" alt="logo">         
-                  <div flex="20" ng-show = "item.onLine">
-              			<p>{{item.status}}</p>
-              	  </div>
+              <div  id="details_channel">
+                  <img  id="img_Logo" ng-src="{{item.logo}}" alt="logo">         
+              	   <p id="item_status" ng-show = "item.onLine">{{item.status}}</p>          	
             </div> 
             </div>
              </a>        
